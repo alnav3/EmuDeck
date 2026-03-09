@@ -7,8 +7,8 @@ SUSE_DEPS=(steam jq zenity flatpak unzip bash libfuse2 git rsync whiptail python
 VOID_DEPS=(steam jq zenity flatpak unzip bash fuse git rsync whiptail python)
 GENTOO_DEPS=(app-misc/jq gnome-extra/zenity sys-apps/flatpak app-arch/unzip app-shells/bash sys-fs/fuse:0 dev-vcs/git net-misc/rsync dev-libs/newt dev-lang/python app-text/xmlstarlet)
 
-OS_NAME=$(grep ^NAME= /etc/os-release | cut -d'"' -f2)
-if [ "$OS_NAME" = "Playnix OS" ]; then
+OS_NAME=$(cat /etc/hostname)
+if [ "$OS_NAME" = "playnix" ]; then
     linuxID="PlaynixOS"
 else
     linuxID=$(lsb_release -si)
