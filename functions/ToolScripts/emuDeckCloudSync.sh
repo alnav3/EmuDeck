@@ -150,6 +150,25 @@ cloud_sync_setup_providers(){
         "$cloud_sync_bin" mkdir "$cloud_sync_provider:"$cs_user"Emudeck/saves"
         cloud_sync_save_hash $savesPath
         "$cloud_sync_bin" copy "$savesPath/.hash" "$cloud_sync_provider:"$cs_user"Emudeck/saves"
+        
+      elif [ "$cloud_sync_provider" == "Emudeck-cloud2" ]; then
+      
+        token="${token//---/|||}"
+        user=$(echo $token | cut -d "|" -f 1)
+        
+        setSetting cs_user "emudeck-saves/$user/"
+        
+        json='{"token":"'"$token"'"}'
+        
+        read -r cloud_key_id cloud_key < <(curl --request POST --url "https://cloud.emudeck.com/login.php" \
+        --header "Content-Type: application/json" \
+        -d "${json}" | jq -r '[.cloud_key_id, .cloud_key] | @tsv')
+        
+        "$cloud_sync_bin" config update "$cloud_sync_provider"  secret_access_key="$cloud_key" access_key_id="$cloud_key_id"
+        
+        "$cloud_sync_bin" mkdir "$cloud_sync_provider:"$cs_user"Emudeck/saves"
+        cloud_sync_save_hash $savesPath
+        "$cloud_sync_bin" copy "$savesPath/.hash" "$cloud_sync_provider:"$cs_user"Emudeck/saves"  
 
       elif [ "$cloud_sync_provider" == "Emudeck-SMB" ]; then
 
