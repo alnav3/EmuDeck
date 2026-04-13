@@ -2,7 +2,7 @@
 #variables
 ESDE_toolName="ES-DE"
 ESDE_oldtoolName="EmulationStation-DE"
-ESDE_downloadedToolName="ES-DE_x64_SteamDeck.AppImage"
+ESDE_downloadedToolName="EmulationStation-DE-x64_SteamDeck.AppImage"
 ESDE_toolType="$emuDeckEmuTypeAppImage"
 ESDE_oldConfigDirectory="$ESDE_newConfigDirectory"
 ESDE_newConfigDirectory="$HOME/ES-DE"
