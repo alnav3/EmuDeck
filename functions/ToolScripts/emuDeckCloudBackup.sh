@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 rclone_path="$toolsPath/rclone"
 rclone_bin="$rclone_path/rclone"

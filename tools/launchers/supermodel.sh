@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 . "$HOME/.config/EmuDeck/backend/functions/all.sh"
 emulatorInit "supermodel"
 param="${@}"

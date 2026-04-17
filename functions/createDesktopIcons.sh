@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 createDesktopIcons(){
 	local sandbox=""
 	local desktop=$(xdg-user-dir DESKTOP)

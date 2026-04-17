@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #Global variables
 emuDecksettingsFile="$emudeckFolder/settings.sh"
@@ -264,7 +264,7 @@ function getSetting(){
 }
 
 function createUpdateSettingsFile(){
-	#!/bin/bash
+#!/usr/bin/env bash
 
 	if [ ! -e "$emuDecksettingsFile" ]; then
 		echo "#!/bin/bash"> "$emuDecksettingsFile"
@@ -931,7 +931,7 @@ getLatestVersionGH() {
 	echo $id
 }
 
-#!/bin/bash
+#!/usr/bin/env bash
 
 saveLatestVersionGH() {
 	emuName=$1
